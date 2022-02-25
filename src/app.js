@@ -5,6 +5,9 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 app.set('json space',2);
+app.use('/api/Tiendas/', require('./rutas/rutasTienda'));
+app.use('/api/Productos/',require('./rutas/rutasProducto'));
+app.use('/api/Categorias/',require('./rutas/rutasCategoria'));
 app.listen(7000, ()=>{
   console.log(" Servidor Iniciado en el puerto 7000 ");
 });
